@@ -666,5 +666,6 @@
 
     <string name="shortcut_downloads_title">@string/navigation_standard_directory_downloads</string>
     <string name="shortcut_ftp_server_title">@string/ftp_server_title</string>
-    <string name="test_page_button">Test Button</string>
+    <string name="test_page_button">Click to Change Color</string>
+    <string name="test_page_back">Back</string>
 </resources>
