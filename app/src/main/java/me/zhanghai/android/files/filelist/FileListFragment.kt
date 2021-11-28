@@ -375,6 +375,10 @@ class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.
                 newTask()
                 true
             }
+            R.id.action_go_up -> {
+                navigateUp()
+                true
+            }
             R.id.action_navigate_up -> {
                 navigateUp()
                 true
