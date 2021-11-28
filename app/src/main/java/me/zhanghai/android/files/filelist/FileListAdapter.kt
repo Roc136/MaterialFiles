@@ -5,7 +5,9 @@
 
 package me.zhanghai.android.files.filelist
 
+import android.content.Intent
 import android.text.TextUtils
+import android.util.Log
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.isVisible
@@ -21,6 +23,7 @@ import me.zhanghai.android.files.file.FileItem
 import me.zhanghai.android.files.file.fileSize
 import me.zhanghai.android.files.file.formatShort
 import me.zhanghai.android.files.file.iconRes
+import me.zhanghai.android.files.lab3.Lab3TestPage
 import me.zhanghai.android.files.provider.archive.isArchivePath
 import me.zhanghai.android.files.settings.Settings
 import me.zhanghai.android.files.ui.AnimatedListAdapter
@@ -287,6 +290,10 @@ class FileListAdapter(
                     listener.createShortcut(file)
                     true
                 }
+                R.id.action_new_page -> {
+                    listener.newPage()
+                    true
+                }
                 R.id.action_properties -> {
                     listener.showPropertiesDialog(file)
                     true
@@ -337,5 +344,6 @@ class FileListAdapter(
         fun addBookmark(file: FileItem)
         fun createShortcut(file: FileItem)
         fun showPropertiesDialog(file: FileItem)
+        fun newPage()
     }
 }

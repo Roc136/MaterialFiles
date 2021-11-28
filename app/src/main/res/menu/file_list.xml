@@ -115,4 +115,10 @@
         android:orderInCategory="100"
         android:title="@string/file_list_action_create_shortcut"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_new_page"
+        android:orderInCategory="100"
+        android:title="@string/file_list_action_new_page"
+        app:showAsAction="never" />
 </menu>

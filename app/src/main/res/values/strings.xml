@@ -276,6 +276,7 @@
     <string name="file_list_action_open_in_terminal">Open in terminal</string>
     <string name="file_list_action_add_bookmark">Add bookmark</string>
     <string name="file_list_action_create_shortcut">Create shortcut</string>
+    <string name="file_list_action_new_page">Open New Test Page</string>
     <string name="file_list_breadcrumb_action_copy_path">@string/file_list_action_copy_path</string>
     <string name="file_list_breadcrumb_action_open_in_new_task">Open in new window</string>
     <string name="file_list_select_title_format">%1$,d selected</string>
@@ -665,4 +666,5 @@
 
     <string name="shortcut_downloads_title">@string/navigation_standard_directory_downloads</string>
     <string name="shortcut_ftp_server_title">@string/ftp_server_title</string>
+    <string name="test_page_button">Test Button</string>
 </resources>

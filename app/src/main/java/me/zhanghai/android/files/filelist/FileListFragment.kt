@@ -16,6 +16,7 @@ import android.os.Environment
 import android.os.Handler
 import android.os.Looper
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -66,6 +67,7 @@ import me.zhanghai.android.files.filejob.FileJobService
 import me.zhanghai.android.files.filelist.FileSortOptions.By
 import me.zhanghai.android.files.filelist.FileSortOptions.Order
 import me.zhanghai.android.files.fileproperties.FilePropertiesDialogFragment
+import me.zhanghai.android.files.lab3.Lab3TestPage
 import me.zhanghai.android.files.navigation.BookmarkDirectories
 import me.zhanghai.android.files.navigation.BookmarkDirectory
 import me.zhanghai.android.files.navigation.NavigationFragment
@@ -84,30 +86,7 @@ import me.zhanghai.android.files.ui.PersistentDrawerLayout
 import me.zhanghai.android.files.ui.ScrollingViewOnApplyWindowInsetsListener
 import me.zhanghai.android.files.ui.ThemedFastScroller
 import me.zhanghai.android.files.ui.ToolbarActionMode
-import me.zhanghai.android.files.util.DebouncedRunnable
-import me.zhanghai.android.files.util.Failure
-import me.zhanghai.android.files.util.Loading
-import me.zhanghai.android.files.util.ParcelableArgs
-import me.zhanghai.android.files.util.Stateful
-import me.zhanghai.android.files.util.Success
-import me.zhanghai.android.files.util.args
-import me.zhanghai.android.files.util.copyText
-import me.zhanghai.android.files.util.create
-import me.zhanghai.android.files.util.createInstallPackageIntent
-import me.zhanghai.android.files.util.createIntent
-import me.zhanghai.android.files.util.createSendStreamIntent
-import me.zhanghai.android.files.util.createViewIntent
-import me.zhanghai.android.files.util.extraPath
-import me.zhanghai.android.files.util.extraPathList
-import me.zhanghai.android.files.util.fadeToVisibilityUnsafe
-import me.zhanghai.android.files.util.getQuantityString
-import me.zhanghai.android.files.util.putArgs
-import me.zhanghai.android.files.util.showToast
-import me.zhanghai.android.files.util.startActivitySafe
-import me.zhanghai.android.files.util.takeIfNotEmpty
-import me.zhanghai.android.files.util.valueCompat
-import me.zhanghai.android.files.util.viewModels
-import me.zhanghai.android.files.util.withChooser
+import me.zhanghai.android.files.util.*
 import me.zhanghai.android.files.viewer.image.ImageViewerActivity
 import pub.devrel.easypermissions.AfterPermissionGranted
 import java.util.LinkedHashSet
@@ -430,6 +409,10 @@ class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.
             }
             R.id.action_create_shortcut -> {
                 createShortcut()
+                true
+            }
+            R.id.action_new_page -> {
+                newPage()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -1252,6 +1235,12 @@ class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.
 
     override fun closeNavigationDrawer() {
         binding.drawerLayout?.closeDrawer(GravityCompat.START)
+    }
+
+    override fun newPage(){
+        Log.d("lab3", "Click Open New Page")
+        val intent = Intent(requireContext().applicationContext, Lab3TestPage::class.java)
+        requireContext().startActivity(intent)
     }
 
     companion object {
